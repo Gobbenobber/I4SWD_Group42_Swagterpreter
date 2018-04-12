@@ -1,12 +1,20 @@
-﻿using Swagterpreter.Interfaces;
+﻿using System;
+using Swagterpreter.Interfaces;
 
 namespace Swagterpreter.Expressions
 {
-    public class Number : ICalculatorExpression
+    public class NumberExpression : IExpression
     {
-        public void Interpret(string interpretMe)
+        private readonly int _number;
+
+        public NumberExpression(int number)
         {
-            throw new System.NotImplementedException();
+            _number = number;
+        }
+
+        public int Interpret()
+        {
+            return _number;
         }
     }
 }

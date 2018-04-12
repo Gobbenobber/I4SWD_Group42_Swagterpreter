@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swagterpreter", "Swagterpreter\Swagterpreter.csproj", "{F25D546A-F8BD-4C8F-8F80-4CEAE176CA47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swagterpreter", "Swagterpreter\Swagterpreter.csproj", "{F25D546A-F8BD-4C8F-8F80-4CEAE176CA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwagterpreterApplication", "SwagterpreterApplication\SwagterpreterApplication.csproj", "{FEB62B12-19F8-4A28-9AFC-C0A8C7A2AB03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F25D546A-F8BD-4C8F-8F80-4CEAE176CA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25D546A-F8BD-4C8F-8F80-4CEAE176CA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25D546A-F8BD-4C8F-8F80-4CEAE176CA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB62B12-19F8-4A28-9AFC-C0A8C7A2AB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB62B12-19F8-4A28-9AFC-C0A8C7A2AB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB62B12-19F8-4A28-9AFC-C0A8C7A2AB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB62B12-19F8-4A28-9AFC-C0A8C7A2AB03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

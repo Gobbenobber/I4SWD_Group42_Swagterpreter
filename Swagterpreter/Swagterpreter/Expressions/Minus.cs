@@ -1,12 +1,22 @@
-﻿using Swagterpreter.Interfaces;
+﻿using System;
+using Swagterpreter.Interfaces;
 
 namespace Swagterpreter.Expressions
 {
-    public class Minus : ICalculatorExpression
+    public class MinusExpression : IExpression
     {
-        public void Interpret(string interpretMe)
+        private IExpression _leftExpression;
+        private IExpression _rightExpression;
+
+        public MinusExpression(IExpression leftExpression, IExpression rightExpression)
         {
-            throw new System.NotImplementedException();
+            _leftExpression = leftExpression ?? throw new ArgumentNullException(nameof(leftExpression));
+            _rightExpression = rightExpression ?? throw new ArgumentNullException(nameof(rightExpression));
+        }
+
+        public int Interpret()
+        {
+            return _leftExpression.Interpret() - _rightExpression.Interpret();
         }
     }
 }
