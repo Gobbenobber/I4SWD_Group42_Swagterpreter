@@ -5,7 +5,7 @@ using Swagterpreter.Interfaces;
 
 namespace Swagterpreter
 {
-    public class ExpressionBuilder
+    public class CalculatorExpressionBuilder : IExpressionBuilder
     {
         public IExpression Build(string input)
         {

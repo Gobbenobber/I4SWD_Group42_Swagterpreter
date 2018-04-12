@@ -10,7 +10,7 @@ namespace SwagterpreterApplication
             Console.WriteLine("Enter Reverse Polish Notation expression: ");
             var input = Console.ReadLine();
 
-            var expressionBuilder = new ExpressionBuilder();
+            var expressionBuilder = new CalculatorExpressionBuilder();
 
             var output = expressionBuilder.Build(input);
             Console.WriteLine("= {0}", output.Interpret());
