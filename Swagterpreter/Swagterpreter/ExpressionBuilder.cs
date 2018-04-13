@@ -5,7 +5,11 @@ using Swagterpreter.Interfaces;
 
 namespace Swagterpreter
 {
-    public class CalculatorExpressionBuilder : IExpressionBuilder
+
+    /// <summary>
+    /// This class acts as the expression builder for interpreting mathematical expressions written in Reverse Polish Notation.
+    /// </summary>
+    public class RPNCalculatorExpressionBuilder : IExpressionBuilder
     {
         public IExpression Build(string input)
         {
