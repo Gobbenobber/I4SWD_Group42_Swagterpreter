@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Swagterpreter.Expressions;
 using Swagterpreter.Interfaces;
 
-namespace Swagterpreter
+namespace Swagterpreter.ExpressionBuilders
 {
 
     /// <summary>
