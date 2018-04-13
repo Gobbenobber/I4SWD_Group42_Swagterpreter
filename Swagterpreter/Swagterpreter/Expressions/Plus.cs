@@ -7,8 +7,8 @@ namespace Swagterpreter.Expressions
 {
     class PlusExpression : IExpression
     {
-        private IExpression _leftExpression;
-        private IExpression _rightExpression;
+        private readonly IExpression _leftExpression;
+        private readonly IExpression _rightExpression;
         public PlusExpression(IExpression leftExpression, IExpression rightExpression)
         {
             _leftExpression = leftExpression ?? throw new ArgumentNullException(nameof(leftExpression));

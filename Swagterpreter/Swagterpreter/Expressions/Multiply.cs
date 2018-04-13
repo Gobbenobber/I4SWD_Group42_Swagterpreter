@@ -5,8 +5,8 @@ namespace Swagterpreter.Expressions
 {
     public class MultiplyExpression : IExpression
     {
-        private IExpression _leftExpression;
-        private IExpression _rightExpression;
+        private readonly IExpression _leftExpression;
+        private readonly IExpression _rightExpression;
 
         public MultiplyExpression(IExpression leftExpression, IExpression rightExpression)
         {
