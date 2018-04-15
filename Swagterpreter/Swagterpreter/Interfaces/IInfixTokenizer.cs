@@ -2,7 +2,7 @@
 {
     public interface IInfixTokenizer
     {
-        string Parse(string input);
+        string Tokenize(string input);
         bool IsValid(string input);
     }
 }
