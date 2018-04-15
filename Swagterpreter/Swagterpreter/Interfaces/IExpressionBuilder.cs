@@ -2,6 +2,6 @@
 {
     public interface IExpressionBuilder
     {
-        IExpression Build(string input);
+        IExpression Build(string[] input);
     }
 }

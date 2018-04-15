@@ -1,5 +1,7 @@
 ﻿using System;
+using Swagterpreter.Controller;
 using Swagterpreter.ExpressionBuilders;
+using Swagterpreter.Interfaces;
 
 namespace SwagterpreterApplication
 {
@@ -7,14 +9,23 @@ namespace SwagterpreterApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Reverse Polish Notation expression: ");
-            var input = Console.ReadLine();
+            var calculator = new Calculator(new InfixToRpnConverter(), new RPNCalculatorExpressionBuilder(), new InfixParser());
 
-            var expressionBuilder = new RPNCalculatorExpressionBuilder();
+            Console.WriteLine("Enter infix notation: ");
 
-            var output = expressionBuilder.Build(input);
-            Console.WriteLine("= {0}", output.Interpret());
-            Console.ReadLine();
+            while (true)
+            {
+                var input = Console.ReadLine();
+
+                try
+                {
+                    Console.WriteLine($"Result is: {calculator.CalculateExpression(input)}");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
     }
 }
