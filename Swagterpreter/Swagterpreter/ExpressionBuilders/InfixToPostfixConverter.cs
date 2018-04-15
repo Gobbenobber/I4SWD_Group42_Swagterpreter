@@ -8,9 +8,9 @@ using Swagterpreter.Interfaces;
 namespace Swagterpreter.ExpressionBuilders
 {
     /// <summary>
-    /// This class was taken from:
+    /// This class was inspired from https://github.com/karimo94/infix-to-rpn/blob/master/Program.cs
     /// </summary>
-    public class InfixToRpnConverter : IInfixToRpnConverter
+    public class InfixToPostfixConverter : IInfixToPostfixConverter
     {
 
         public List<string> InFixToPostFix(string infix)

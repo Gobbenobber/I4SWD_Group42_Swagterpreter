@@ -16,40 +16,40 @@ namespace Swagterpreter.ExpressionBuilders
 
             foreach (var element in input)
             {
-                IExpression rightHandExpression = null;
-                IExpression leftHandExpression = null;
+                IExpression rightExpression = null;
+                IExpression leftExpression = null;
 
                 switch (element)
                 {
                     case "+":
-                        rightHandExpression = stack.Pop();
-                        leftHandExpression = stack.Pop();
+                        rightExpression = stack.Pop();
+                        leftExpression = stack.Pop();
 
-                        stack.Push(new PlusExpression(leftHandExpression, rightHandExpression));
+                        stack.Push(new AddExpression(leftExpression, rightExpression));
                         break;
 
                     case "-":
-                        rightHandExpression = stack.Pop();
-                        leftHandExpression = stack.Pop();
-                        stack.Push(new MinusExpression(leftHandExpression, rightHandExpression));
+                        rightExpression = stack.Pop();
+                        leftExpression = stack.Pop();
+                        stack.Push(new SubtractExpression(leftExpression, rightExpression));
                         break;
 
                     case "*":
-                        rightHandExpression = stack.Pop();
-                        leftHandExpression = stack.Pop();
-                        stack.Push(new MultiplyExpression(leftHandExpression, rightHandExpression));
+                        rightExpression = stack.Pop();
+                        leftExpression = stack.Pop();
+                        stack.Push(new MultiplyExpression(leftExpression, rightExpression));
                         break;
 
                     case "/":
-                        rightHandExpression = stack.Pop();
-                        leftHandExpression = stack.Pop();
-                        stack.Push(new DivideExpression(leftHandExpression, rightHandExpression));
+                        rightExpression = stack.Pop();
+                        leftExpression = stack.Pop();
+                        stack.Push(new DivideExpression(leftExpression, rightExpression));
                         break;
 
                     case "^":
-                        rightHandExpression = stack.Pop();
-                        leftHandExpression = stack.Pop();
-                        stack.Push(new PowerToExpression(leftHandExpression, rightHandExpression));
+                        rightExpression = stack.Pop();
+                        leftExpression = stack.Pop();
+                        stack.Push(new PowerToExpression(leftExpression, rightExpression));
                         break;
 
                     default:

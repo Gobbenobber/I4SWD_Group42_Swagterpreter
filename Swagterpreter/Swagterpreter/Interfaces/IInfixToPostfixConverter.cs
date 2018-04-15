@@ -2,7 +2,7 @@
 
 namespace Swagterpreter.Interfaces
 {
-    public interface IInfixToRpnConverter
+    public interface IInfixToPostfixConverter
     {
         List<string> InFixToPostFix(string infix);
     }

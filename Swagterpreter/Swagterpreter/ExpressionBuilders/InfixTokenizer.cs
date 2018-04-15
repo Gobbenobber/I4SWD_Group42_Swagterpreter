@@ -6,7 +6,7 @@ using Swagterpreter.Interfaces;
 
 namespace Swagterpreter.ExpressionBuilders
 {
-    public class InfixParser : IInfixParser
+    public class InfixTokenizer : IInfixTokenizer
     {
         public string Parse(string input)
         {
