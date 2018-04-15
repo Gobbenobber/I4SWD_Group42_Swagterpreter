@@ -26,7 +26,7 @@ namespace SwagterpreterApplication
                 {
                     WriteResult(calculator.CalculateExpression(input));
                 }
-                catch (NullReferenceException e)
+                catch (NullReferenceException)
                 {
 
                 }
