@@ -8,6 +8,11 @@ namespace Swagterpreter.ExpressionBuilders
 {
     public class InfixTokenizer : IInfixTokenizer
     {
+        /// <summary>
+        /// Tokenizes the input string so that each element is seperated by a white-space character
+        /// </summary>
+        /// <param name="input">The infix string to tokenize</param>
+        /// <returns>The input string where each element is seperated by a white-space character</returns>
         public string Tokenize(string input)
         {
             var sb = new StringBuilder();
@@ -29,6 +34,11 @@ namespace Swagterpreter.ExpressionBuilders
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Checks whether the giving input string is valid infix notation
+        /// </summary>
+        /// <param name="infix"></param>
+        /// <returns> If the input is valid infix notation true, else false </returns>
         public bool IsValid(string infix)
         {
             Regex operators = new Regex(@"[\-^+*/%]", RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled);
@@ -90,6 +100,12 @@ namespace Swagterpreter.ExpressionBuilders
             return true;
         }
 
+        /// <summary>
+        /// Utility method for checking whether a space should be added bewtween passed chars
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="next"></param>
+        /// <returns>True if space should be added</returns>
         private bool AddSpace(char current, char next)
         {
             if (Char.IsNumber(current) && Char.IsNumber(next))

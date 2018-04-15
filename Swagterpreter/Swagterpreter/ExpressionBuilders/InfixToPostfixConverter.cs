@@ -12,7 +12,11 @@ namespace Swagterpreter.ExpressionBuilders
     /// </summary>
     public class InfixToPostfixConverter : IInfixToPostfixConverter
     {
-
+        /// <summary>
+        /// Converts the passed string to postfix notation
+        /// </summary>
+        /// <param name="infix"></param>
+        /// <returns>A list of tokens corresponding to the postfix notation of the passed input string</returns>
         public List<string> InFixToPostFix(string infix)
         {
             var postFix = new List<string>();
@@ -88,7 +92,6 @@ namespace Swagterpreter.ExpressionBuilders
         }
 
         #endregion
-
 
     }
 }

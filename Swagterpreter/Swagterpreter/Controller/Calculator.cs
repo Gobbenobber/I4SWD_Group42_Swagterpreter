@@ -15,6 +15,12 @@ namespace Swagterpreter.Controller
             _expressionBuilder = builder;
             _tokenizer = tokenizer;
         }
+        /// <summary>
+        /// Calculates the given infix string. Throws if input is invalid
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
+        /// <param name="input"></param>
+        /// <returns>The calculated value of the input</returns>
         public int CalculateExpression(string input)
         {
             var infix = input.Replace(" ", string.Empty);
