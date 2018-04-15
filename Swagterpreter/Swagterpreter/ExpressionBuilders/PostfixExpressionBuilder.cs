@@ -57,9 +57,7 @@ namespace Swagterpreter.ExpressionBuilders
                         stack.Push(new NumberExpression(number));
                         break;
                 }
-
             }
-            
             return stack.Pop();
         }
     }
