@@ -16,7 +16,7 @@ namespace SwagterpreterApplication
 
             WriteWelcome("Welcome to SwagUlator 3000");
             WriteWelcome("Enter infix notation: ");
-
+            Console.ForegroundColor = Color.Coral;
             while (true)
             {
                 var input = Console.ReadLine();
@@ -25,11 +25,21 @@ namespace SwagterpreterApplication
                 {
                     WriteResult(calculator.CalculateExpression(input));
                 }
+                catch (NullReferenceException e)
+                {
+
+                }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    WriteError(e.Message);
                 }
             }
+        }
+
+        private static void WriteError(string message)
+        {
+            Console.Write(new string(' ', (Console.WindowWidth - message.Length) / 2));
+            Console.WriteLine(message, Color.Red);
         }
 
         private static void WriteWelcome(string text)
