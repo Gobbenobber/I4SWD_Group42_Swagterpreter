@@ -5,13 +5,13 @@ namespace Swagterpreter.Controller
 {
     public class Calculator : ICalculator
     {
-        private readonly IInfixToPostfixConverter _infixToRpnConverter;
+        private readonly IInfixToPostfixConverter _infixToPostfixConverter;
         private readonly IExpressionBuilder _expressionBuilder;
         private readonly IInfixTokenizer _tokenizer;
 
         public Calculator(IInfixToPostfixConverter converter, IExpressionBuilder builder, IInfixTokenizer tokenizer)
         {
-            _infixToRpnConverter = converter;
+            _infixToPostfixConverter = converter;
             _expressionBuilder = builder;
             _tokenizer = tokenizer;
         }
@@ -22,7 +22,7 @@ namespace Swagterpreter.Controller
             if (_tokenizer.IsValid(infix))
             {
                 infix = _tokenizer.Parse(infix);
-                var postfix = _infixToRpnConverter.InFixToPostFix(infix);
+                var postfix = _infixToPostfixConverter.InFixToPostFix(infix);
                 var expression = _expressionBuilder.Build(postfix.ToArray());
                 return expression.Interpret();
             }
