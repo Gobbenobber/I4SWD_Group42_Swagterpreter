@@ -9,7 +9,7 @@ namespace SwagterpreterApplication
     {
         static void Main(string[] args)
         {
-            var calculator = new Calculator(new InfixToRpnConverter(), new RPNCalculatorExpressionBuilder(), new InfixParser());
+            var calculator = new Calculator(new InfixToRpnConverter(), new PostfixExpressionBuilder(), new InfixParser());
 
             Console.WriteLine("Enter infix notation: ");
 

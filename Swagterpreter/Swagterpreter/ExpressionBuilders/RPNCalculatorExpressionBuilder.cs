@@ -8,7 +8,7 @@ namespace Swagterpreter.ExpressionBuilders
     /// <summary>
     /// This class acts as the expression builder for interpreting mathematical expressions written in Reverse Polish Notation.
     /// </summary>
-    public class RPNCalculatorExpressionBuilder : IExpressionBuilder
+    public class PostfixExpressionBuilder : IExpressionBuilder
     {
         public IExpression Build(string[] input)
         {
