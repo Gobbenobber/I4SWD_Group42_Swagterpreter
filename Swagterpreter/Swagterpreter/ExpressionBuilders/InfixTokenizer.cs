@@ -8,7 +8,7 @@ namespace Swagterpreter.ExpressionBuilders
 {
     public class InfixTokenizer : IInfixTokenizer
     {
-        public string Parse(string input)
+        public string Tokenize(string input)
         {
             var sb = new StringBuilder();
 

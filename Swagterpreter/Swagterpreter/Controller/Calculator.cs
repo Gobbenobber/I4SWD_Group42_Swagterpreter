@@ -21,7 +21,7 @@ namespace Swagterpreter.Controller
 
             if (_tokenizer.IsValid(infix))
             {
-                infix = _tokenizer.Parse(infix);
+                infix = _tokenizer.Tokenize(infix);
                 var postfix = _infixToPostfixConverter.InFixToPostFix(infix);
                 var expression = _expressionBuilder.Build(postfix.ToArray());
                 return expression.Interpret();
