@@ -32,7 +32,9 @@ namespace Swagterpreter.ExpressionBuilders
         public bool IsValid(string infix)
         {
             Regex operators = new Regex(@"[\-^+*/%]", RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled);
+
             var input = infix;
+
             if (string.IsNullOrEmpty(input))
                 return false;
 
@@ -67,10 +69,13 @@ namespace Swagterpreter.ExpressionBuilders
             tempString = input;
 
             operators = new Regex(@"[1234567890]", RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled);
-            tempString = operators.Replace(tempString, ".");
+            var moreOps = new Regex(@"[(]", RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled );
 
-            //if (tempString.Contains(".."))
-            //    return false;
+            tempString = operators.Replace(tempString, ".");
+            tempString = moreOps.Replace(tempString, "g");
+
+            if (tempString.Contains(".g"))
+                return false;
             if (input.StartsWith("*") || input.StartsWith("/") || input.StartsWith("%")
                 || input.StartsWith("+") || input.StartsWith("-"))
                 return false;
@@ -82,16 +87,6 @@ namespace Swagterpreter.ExpressionBuilders
                     return false;
             }
 
-            int begin = 0, end = 0;
-            foreach (char c in input)
-            {
-                if (c == '(')
-                    begin++;
-                if (c == ')')
-                    end++;
-                if (end > begin)
-                    return false;
-            }
             return true;
         }
 
